@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Router } from 'express';
 import bodyParser from 'body-parser';
 import http from 'http';
 import cookieParser from 'cookie-parser';   
@@ -6,8 +6,15 @@ import cors from 'cors';
 import compression from 'compression';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
+import router from './routes/index';
+import {getUserByEmail}  from './db/users';
 
+// const temp  = async (email:string)=>{
+//     const user = await getUserByEmail(email).select('+authentication.salt');
+//     console.log(user);
+// }
 
+// temp('ruchirkhare12@gmail.com');
 
 const app = express();
 
@@ -16,6 +23,7 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(compression());
 app.use(morgan('dev'));
+app.use('/',router())
 
 
 const server = http.createServer(app);

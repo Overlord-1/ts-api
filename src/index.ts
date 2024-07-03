@@ -23,6 +23,8 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(compression());
 app.use(morgan('dev'));
+
+//router
 app.use('/',router())
 
 

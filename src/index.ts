@@ -35,7 +35,7 @@ server.listen(8080,()=>{
 })
 
 
-const MONGO_URI = 'mongodb+srv://ruchirkhare12:oEg8TS54njUgvqIT@cluster0.fs775mq.mongodb.net/API?retryWrites=true&w=majority&appName=Cluster0';  // mongodb connection string
+const MONGO_URI = 'mongoURL here';  // mongodb connection string
 
 
 mongoose.connect(MONGO_URI)
